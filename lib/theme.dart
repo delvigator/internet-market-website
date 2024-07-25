@@ -46,6 +46,7 @@ TextTheme textTheme(){
         titleLarge: TextStyle(
             color: OurColors.textColor,
             fontSize: 20,
+            fontWeight: FontWeight.bold,
             fontFamily: "Inter"
         ),
         titleSmall: TextStyle(

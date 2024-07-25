@@ -16,16 +16,16 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(child: Image.asset("assets/images/camping.png",width: 50,height: 50,)),
-        SizedBox(width: 50,),
+        Image.asset("assets/images/camping.png",width: 50,height: 50,),
+        const SizedBox(width: 50,),
         TextButton(onPressed: (){}, child: Text("Подборки", style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),)),
-        SizedBox(width: 20,),
+        const SizedBox(width: 20,),
         TextButton(onPressed: (){}, child: Text("Каталог", style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),)),
-        const SizedBox(width: 150),
+        const SizedBox(width: 130),
         Container(
-          width: 400,
+          width: 380,
           height: 40,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -42,7 +42,7 @@ class _HeaderState extends State<Header> {
                 FocusManager.instance.primaryFocus?.unfocus();
               },
               decoration: InputDecoration(
-                //  contentPadding: const EdgeInsets.symmetric(vertical: 15,horizontal: 20),
+                 contentPadding: const EdgeInsets.symmetric(vertical: 12,horizontal: 20),
                   border: InputBorder.none,
                   icon: const Icon(Icons.search,color: Colors.black45,size: 20,),
                   hintText: "Введите название товара",

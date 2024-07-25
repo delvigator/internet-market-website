@@ -5,6 +5,7 @@ import 'our_colors.dart';
 
 class DefaultButton extends StatelessWidget {
   final String text;
+  final Color? borderColor;
   final String? subtext;
   final VoidCallback? onPress;
   final Color? primaryColor;
@@ -15,6 +16,7 @@ class DefaultButton extends StatelessWidget {
       {Key? key,
         required this.text,
         this.subtext,
+        this.borderColor,
         this.onPress,
         this.textColor = Colors.black,
         this.primaryColor = OurColors.focusColor,
@@ -25,8 +27,8 @@ class DefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color:
-          (!enabled || onPress == null) ? OurColors.focusColor : primaryColor,
+          border: Border.all(color: borderColor == null ? OurColors.focusColor : borderColor!),
+           color: primaryColor,
           borderRadius: const BorderRadius.all(Radius.circular(10))),
       child: Material(
         color: Colors.transparent,
@@ -48,7 +50,7 @@ class DefaultButton extends StatelessWidget {
                             text: text,
                             style: theme()
                                 .textTheme.bodyMedium!
-                                .copyWith(color: textColor)),
+                                .copyWith(color: textColor, fontWeight: FontWeight.w500)),
                         TextSpan(
                             text: (subtext == null) ? null : '\n$subtext',
                             style: theme()

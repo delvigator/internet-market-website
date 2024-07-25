@@ -1,4 +1,5 @@
-import 'package:exdevs/pages/home_page.dart';
+import 'package:exdevs/pages/home/home_page.dart';
+import 'package:exdevs/routes.dart';
 import 'package:exdevs/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Internet Market',
       debugShowCheckedModeBanner: false,
+      routes: routes,
       theme: theme(),
       home:  const HomePage(),
     );
